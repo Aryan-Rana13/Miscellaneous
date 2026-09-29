@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+// Linear Search
+int L_search(int array[], int size, int item)
+{
+
+    for (int i = 0; i <= size; i++)
+    {
+        if (array[i] == item)
+        {
+            return i;
+            break;
+        }
+    }
+    return -1;
+}
+
+
+// Binary search
+//its only applicable in sorted array
+int B_search(int array[], int size, int item)
+{
+    int ub = size - 1;
+    int lb = 0;
+    while (lb <= ub)
+    {
+        int mid = (lb + ub) / 2;
+        if (array[mid] == item)
+        {
+            return mid;
+        }
+        else if (array[mid] < item)
+        {
+            lb = mid + 1;
+        }
+        else
+        {
+            ub = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int main()
+{
+    int arr[] = {2, 5, 7, 8, 9, 10, 37, 39};
+    int n = 5;
+    int size = sizeof(arr) / sizeof(int);
+    int result = B_search(arr, size, n);
+
+    if (result != -1)
+    {
+        cout << "item found at:" << result + 1;
+    }
+    else
+    {
+        cout << "item not found";
+    }
+}
