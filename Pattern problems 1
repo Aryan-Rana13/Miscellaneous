@@ -1,0 +1,290 @@
+#include <iostream>
+using namespace std;
+
+/* -------pattern 1-------
++
+++
++++
+++++
++++++
+*/
+void pattern1(int n)
+{
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+/*-------pattern 2-------
+*****
+****
+***
+**
+*
+*/
+void pattern2(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = n; j >= i; j--)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+/*-------pattern 3-------
+    +
+   ++
+  +++
+ ++++
++++++
+*/
+void pattern3(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = n; j > i; j--)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k <= i; k++)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+/*-------pattern 4-------
++++++
+ ++++
+  +++
+   ++
+    +
+*/
+void pattern4(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << " ";
+        }
+        for (int k = n; k >= i; k--)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+/*-------pattern 5-------
+    +
+   +++
+  +++++
+ +++++++
++++++++++
+*/
+void pattern5(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = n; j > i; j--)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k < i; k++)
+        {
+            cout << "+";
+        }
+        for (int l = 1; l <= i; l++)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+/*-------pattern 6-------
+ +++++++++
+  +++++++
+   +++++
+    +++
+     +
+*/
+void pattern6(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << " ";
+        }
+        for (int k = n; k > i; k--)
+        {
+            cout << "+";
+        }
+        for (int l = n; l >= i; l--)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+/*-------pattern 7-------
+ +++++++++
+  +++++++
+   +++++
+    +++
+     +
+    +++
+   +++++
+  +++++++
+ +++++++++
+*/
+void pattern7(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << " ";
+        }
+        for (int k = n; k > i; k--)
+        {
+            cout << "+";
+        }
+        for (int l = n; l >= i; l--)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+
+    for (int i = 2; i <= n; i++)
+    {
+        for (int j = n; j >= i; j--)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k < i; k++)
+        {
+            cout << "+";
+        }
+        for (int l = 1; l <= i; l++)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+/*-------pattern 8--------
++        +
+++      ++
++++    +++
+++++  ++++
+++++++++++
+++++  ++++
++++    +++
+++      ++
++        +
+ */
+void pattern8(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "+";
+        }
+        for (int k = n; k > i; k--)
+        {
+            cout << " ";
+        }
+        for (int l = n; l > i; l--)
+        {
+            cout << " ";
+        }
+        for (int o = 1; o <= i; o++)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        for (int j = n; j >= i; j--)
+        {
+            cout << "+";
+        }
+        for (int k = 1; k < i; k++)
+        {
+            cout << " ";
+        }
+        for (int l = 1; l < i; l++)
+        {
+            cout << " ";
+        }
+        for (int o = n; o >= i; o--)
+        {
+            cout << "+";
+        }
+        cout << "\n";
+    }
+}
+
+int main()
+{
+    int num, pat;
+
+    cout << "enter the number of pattern you want to print from above: ";
+    cin >> pat;
+    cout << "enter the number fo lines: ";
+    cin >> num;
+    switch (pat)
+    {
+    case 1:
+        pattern1(num);
+        break;
+
+    case 2:
+        pattern2(num);
+        break;
+
+    case 3:
+        pattern3(num);
+        break;
+
+    case 4:
+        pattern4(num);
+        break;
+
+    case 5:
+        pattern5(num);
+        break;
+
+    case 6:
+        pattern6(num);
+        break;
+
+    case 7:
+        pattern7(num);
+        break;
+
+    case 8:
+        pattern8(num);
+        break;
+
+    default:
+        cout << "please enter valid number of pattern";
+        break;
+    }
+}
